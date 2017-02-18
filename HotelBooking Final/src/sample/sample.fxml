@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainBorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+
+
+    <top>
+        <VBox>
+           <children>
+               <MenuBar>
+                  <menus>
+                      <Menu text="File">
+                          <items>
+                              <MenuItem onAction="#showNewGuestDialog" text="New Guest" />
+                              <MenuItem text="Close" />
+                          </items>
+                      </Menu>
+                      <Menu text="Edit">
+                          <items>
+                              <MenuItem onAction="#showEditDialog" text="Edit" />
+                              <MenuItem onAction="#deleteSelectedFile" text="Delete" />
+                          </items>
+                      </Menu>
+                      <Menu text="Help">
+                          <items>
+                              <MenuItem text="About" />
+                          </items>
+                      </Menu>
+                  </menus>
+               </MenuBar>
+               <HBox spacing="10.0">
+                   <VBox.margin>
+                       <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                   </VBox.margin>
+                  <children>
+                      <ImageView fitHeight="27.0" preserveRatio="true">
+                          <image>
+                              <Image url="@10.png" />
+                          </image>
+                      </ImageView>
+                      <ImageView fitHeight="27.0" fitWidth="60.0" preserveRatio="true">
+                          <image>
+                              <Image url="@five_star.png" />
+                          </image>
+                      </ImageView>
+                      <Region HBox.hgrow="ALWAYS" />
+                      <Button text="Log in ">
+                          <font>
+                              <Font name="Papyrus" size="13.0" />
+                          </font>
+                          <padding>
+                              <Insets bottom="1.0" left="5.0" right="5.0" />
+                          </padding>
+                      </Button>
+                      <TextField promptText="Username" />
+                      <PasswordField promptText="Password" />
+                  </children>
+               </HBox>
+           </children>
+        </VBox>
+    </top>
+    <left>
+        <ListView fx:id="rooms" BorderPane.alignment="CENTER" />
+    </left>
+   <center>
+       <AnchorPane BorderPane.alignment="CENTER">
+              <Separator AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+          <children>
+                  <Label alignment="CENTER" layoutX="105.0" layoutY="23.0" text="Reservation Details:" textFill="#a82424" underline="true" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                  <GridPane fx:id="gridPane" alignment="CENTER" layoutX="24.0" layoutY="108.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                      <columnConstraints>
+                          <ColumnConstraints hgrow="ALWAYS" maxWidth="206.0" minWidth="10.0" prefWidth="202.0" />
+                          <ColumnConstraints hgrow="ALWAYS" maxWidth="171.0" minWidth="10.0" prefWidth="78.0" />
+                      </columnConstraints>
+                      <rowConstraints>
+                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      </rowConstraints>
+                      <children>
+                          <Label text="Room Number" />
+                          <Label text="First name" GridPane.rowIndex="1" />
+                          <Label text="Last name" GridPane.rowIndex="2" />
+                          <Label text="Phone number" GridPane.rowIndex="3" />
+                          <Label text="Booked" GridPane.rowIndex="4" />
+                          <Label text="Check in" GridPane.rowIndex="5" />
+                          <Label text="Check out" GridPane.rowIndex="6" />
+                          <Label text="Bill" GridPane.rowIndex="7" />
+                          <Label fx:id="roomNumber" styleClass="label-bright" text="Label" GridPane.columnIndex="1" />
+                          <Label fx:id="firstName" styleClass="label-bright" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                          <Label fx:id="lastName" styleClass="label-bright" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                          <Label fx:id="phoneNum" styleClass="label-bright" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                          <Label fx:id="booked" styleClass="label-bright" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                          <Label fx:id="checkIn" styleClass="label-bright" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                          <Label fx:id="checkOut" styleClass="label-bright" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                          <Label fx:id="bill" styleClass="label-bright" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                      </children>
+                  </GridPane>
+          </children>
+       </AnchorPane>
+   </center>
+</BorderPane>
